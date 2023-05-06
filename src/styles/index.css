@@ -1,0 +1,348 @@
+::after, ::before, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.header h1 {
+  color: #4bc57e;
+}
+
+.calculatorcard {
+  height: calc(100% - 76px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.calculatorcard .containercard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 30px;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  justify-items: center;
+}
+.calculatorcard .containercard .headcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+}
+.calculatorcard .containercard .headcontainer .head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  height: 40px;
+  border: 2px solid #4bc57e;
+  width: 49%;
+}
+.calculatorcard .containercard .headcontainer .head h3 {
+  color: #4bc57e;
+}
+.calculatorcard .containercard .headcontainer button {
+  width: 49%;
+  height: 40px;
+  background-color: #4bc57e;
+  border: none;
+  font-size: 19px;
+}
+.calculatorcard .containercard .headcontainer button a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.calculatorcard .containercard .prodect {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+}
+.calculatorcard .containercard .prodect input {
+  width: 100%;
+  height: 40px;
+  padding-left: 5px;
+  outline: none;
+  border: 2px solid #c9d6cf;
+}
+.calculatorcard .containercard .prodect input:focus {
+  border: 2px solid #4bc57e;
+}
+.calculatorcard .containercard .prodectprice {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+}
+.calculatorcard .containercard .prodectprice input {
+  width: 100%;
+  height: 40px;
+  padding-left: 5px;
+  outline: none;
+  border: 2px solid #c9d6cf;
+}
+.calculatorcard .containercard .prodectprice input:focus {
+  border: 2px solid #4bc57e;
+}
+.calculatorcard .containercard .quatityDate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.calculatorcard .containercard .quatityDate .quetity {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 5px;
+}
+.calculatorcard .containercard .quatityDate .quetity input {
+  height: 40px;
+  padding-left: 5px;
+  outline: none;
+  border: 2px solid #c9d6cf;
+}
+.calculatorcard .containercard .quatityDate .quetity input:focus {
+  border: 2px solid #4bc57e;
+}
+.calculatorcard .containercard .quatityDate .date {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 5px;
+}
+.calculatorcard .containercard .quatityDate .date .dateinput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.calculatorcard .containercard .quatityDate .date .dateinput input {
+  width: 90px;
+  height: 40px;
+  text-align: center;
+  outline: none;
+  border: 2px solid #c9d6cf;
+}
+.calculatorcard .containercard .quatityDate .date .dateinput input:focus {
+  border: 2px solid #4bc57e;
+}
+.calculatorcard .containercard #btn {
+  height: 44px;
+  width: 100%;
+  color: white;
+  background-color: #4bc57e;
+  border: none;
+  font-size: 19px;
+  cursor: pointer;
+  transition: all ease-in-out 0.6s;
+}
+.calculatorcard .containercard #btn:active {
+  height: 42px;
+  width: 96%;
+  margin: 1px 2px;
+  font-size: 17px;
+}
+
+.alert {
+  border: 2px solid red;
+}
+
+.shoplist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  min-height: calc(100% - 76px);
+}
+.shoplist .shopingcard {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  gap: 0;
+}
+.shoplist .shopingcard .shopingcardheader {
+  display: grid;
+  grid-template-columns: repeat(9, 100px);
+  grid-auto-rows: minmax(60px, auto);
+  grid-template-areas: "shName shName shName shName shName   CusId CusId date date" "shAdresses shAdresses shAdresses shAdresses shAdresses   CusId CusId date date" "EmId EmId EmId EmId EmId   CusIdInfo CusIdInfo dateInfo dateInfo" "desc desc desc desc qty un_Price un_Price amount amount";
+  border-top: 2px solid rgb(215, 214, 214);
+  border-left: 2px solid rgb(215, 214, 214);
+}
+.shoplist .shopingcard .shopingcardheader .shName {
+  grid-area: shName;
+}
+.shoplist .shopingcard .shopingcardheader .shAdresses {
+  grid-area: shAdresses;
+}
+.shoplist .shopingcard .shopingcardheader .EmId {
+  grid-area: EmId;
+}
+.shoplist .shopingcard .shopingcardheader .CusId {
+  grid-area: CusId;
+  background-color: #4bc57e;
+  color: white;
+}
+.shoplist .shopingcard .shopingcardheader .CusIdInfo {
+  grid-area: CusIdInfo;
+}
+.shoplist .shopingcard .shopingcardheader .date {
+  grid-area: date;
+  background-color: #4bc57e;
+  color: white;
+}
+.shoplist .shopingcard .shopingcardheader .dateInfo {
+  grid-area: dateInfo;
+}
+.shoplist .shopingcard .shopingcardheader .desc {
+  grid-area: desc;
+  background-color: #4bc57e;
+  color: white;
+}
+.shoplist .shopingcard .shopingcardheader .qty {
+  grid-area: qty;
+  background-color: #4bc57e;
+  color: white;
+}
+.shoplist .shopingcard .shopingcardheader .un_Price {
+  grid-area: un_Price;
+  background-color: #4bc57e;
+  color: white;
+}
+.shoplist .shopingcard .shopingcardheader .amount {
+  grid-area: amount;
+  background-color: #4bc57e;
+  color: white;
+}
+.shoplist .shopingcard .shopingcardheader > div {
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid rgb(215, 214, 214);
+  border-right: 2px solid rgb(215, 214, 214);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.shoplist .shopingcard .totalpricesection {
+  margin-top: 20px;
+  padding: 20px 36px;
+  background-color: #4bc57e;
+  color: white;
+}
+
+.listitem {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(9, 100px);
+  border: none;
+  grid-auto-rows: minmax(60px, auto);
+  grid-template-areas: "desli desli desli desli qtyli priceli priceli amounli amounli";
+}
+.listitem .desli {
+  grid-area: desli;
+  border: 2px solid rgb(215, 214, 214);
+  text-align: start;
+  padding-left: 4px;
+  font-size: 16px;
+  border-top: none;
+  border-right: none;
+}
+.listitem .qtyli {
+  grid-area: qtyli;
+  border: 2px solid rgb(215, 214, 214);
+  border-right: none;
+  border-top: none;
+  text-align: center;
+  font-size: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.listitem .priceli {
+  grid-area: priceli;
+  border: 2px solid rgb(215, 214, 214);
+  border-top: none;
+  text-align: end;
+  padding-right: 4px;
+  font-size: 16px;
+}
+.listitem .amountli {
+  grid-area: amounli;
+  border: 2px solid rgb(215, 214, 214);
+  border-top: none;
+  border-left: none;
+  text-align: end;
+  padding-right: 4px;
+  font-size: 16px;
+}
+.listitem > input[type=number]::-webkit-inner-spin-button,
+.listitem input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  border: none;
+}
+.listitem .customize {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -86px;
+  display: none;
+  width: 90px;
+}
+.listitem .customize button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.listitem .add {
+  display: flex;
+}/*# sourceMappingURL=index.css.map */
