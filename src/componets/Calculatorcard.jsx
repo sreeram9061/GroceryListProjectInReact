@@ -13,7 +13,6 @@ const Calculatorcard=()=>{
     let date=useRef()
     let month=useRef()
     let year=useRef()
-    
 
     const handleList=()=>{
 
@@ -26,20 +25,20 @@ const Calculatorcard=()=>{
         })
 
 
-        const setDate=(date,month,year)=>{
+        const pasDate=(date,month,year)=>{
             return{
                 date:date.current.value,
                 month:month.current.value,
                 year:year.current.value
                 }
         }
-        const setPreviousDate=()=>{
+        
+        const passPreviousDate=()=>{
             date.current.value=curentDate.date
             month.current.value=curentDate.month
             year.current.value=curentDate.year
 
             return  groceryListState.curentDate
-
         }
         
         //set date and pass data
@@ -47,7 +46,7 @@ const Calculatorcard=()=>{
             dispath({
                 type:'LIST_ITEMS',
                 payload:{
-                    curentDate: prodectList.length==1&&userId==100? setDate(date,month,year) : setPreviousDate(),
+                    curentDate: prodectList.length==1&&userId==100? pasDate(date,month,year) : passPreviousDate(),
                     list:{
                         id:prodectList[prodectList.length-1].id+1,
                         prodectName:prodectName.current.value,
@@ -96,7 +95,7 @@ const Calculatorcard=()=>{
      
                  <div className="quatityDate">
                     <div className="quetity">
-                      <label htmlFor="">Prodect Quetity</label>
+                      <label htmlFor="">Prodect quantity</label>
                       <input className="" min="0"   ref={prodectQuetity} type="number" />
                     </div>
      
